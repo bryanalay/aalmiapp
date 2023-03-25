@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-function RegisterForm({registerUser}){
+function RegisterForm({registerUser,showRegisterForm}){
 
     //const [dataRegister,setDataRegister] = useState({username:'',password:''})
 
@@ -15,15 +15,15 @@ function RegisterForm({registerUser}){
         console.log(user);     
     }
 
-    return(<>
-        <h1>Register user</h1>
-        <input  onChange={handleChangeUsername} placeholder="Usuario"></input>
-        <input onChange={handleChangePassword} placeholder="Constraseña"></input>
-        <button onClick={()=>{
+    return(<div className={`rounded-xl bg-orange-300 flex flex-col justify-center items-center p-8 w-96 gap-4`} >
+        <h1 className="text-white font-bold text-[35px]">Create Account</h1>
+        <input className={`rounded-none w-52 h-9 px-4 border-black border-2`} onChange={handleChangeUsername} placeholder="User"></input>
+        <input className={`rounded-none w-52 h-9 px-4 border-black border-2`} onChange={handleChangePassword} placeholder="Password"></input>
+        <button  className={`class="h-10 px-6 py-3 font-semibold rounded-md bg-black text-white type="submit"`} onClick={()=>{
             registerUser(user)
         }} >Create</button>
-    
-    </>)
+        <button className="font-semibold" onClick={()=>{showRegisterForm()}} >Ya tengo cuenta</button>
+    </div>)
 }
 
 export { RegisterForm }

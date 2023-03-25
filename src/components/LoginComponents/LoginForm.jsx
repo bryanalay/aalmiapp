@@ -1,6 +1,4 @@
-import { getPosts } from "../../utils/posts";
-
-function LoginForm({login}){
+function LoginForm({login,showRegisterForm}){
     const user = {username:'',password:''}
     function handleChangeUsername(evt){        
         user.username = evt.target.value
@@ -11,21 +9,16 @@ function LoginForm({login}){
         user.password = evt.target.value   
         console.log(user);     
     }
-
-    const token ='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJraHcwIiwidXNlcm5hbWUiOiJ0ZXN0dXNlciIsInBhc3N3b3JkIjoiJDJiJDA1JEh2ZzlnRk9XYkd6alcyYmRYNURxWnUxZkdVbnJianhKQzZtQ295N0FSbTF5MmwwQUVtR0VPIiwiaWF0IjoxNjc1ODg4NDkxfQ.CLN11C4abgc3ObtyG3uU_SXYQOFhygSYskYgvEVckVI'
-    
-    return(<>
-        <h1>Login</h1>
-        <input onChange={handleChangeUsername} placeholder="Usuario"></input>
-        <input onChange={handleChangePassword} placeholder="Constraseña"></input>
-        <button onClick={()=>{
+        
+    return(<div className={`rounded-xl bg-orange-300 flex flex-col justify-center items-center p-8 w-96 gap-4`}>
+        <h1 className="text-white font-bold text-[35px]" >Login</h1>
+        <input className={`rounded-none w-52 h-9 px-4 border-black border-2`} onChange={handleChangeUsername} placeholder="User"></input>
+        <input type={`password`} className={`rounded-none w-52 h-9 px-4 border-black border-2`} onChange={handleChangePassword} placeholder="Password"></input>
+        <button  className={`h-10 px-6 font-semibold w-52 rounded-md bg-black text-white`} onClick={()=>{
             login(user)
         }} >Entrar</button>
-    
-        <button onClick={()=>{
-            getPosts(token)
-        }} >get posts</button>
-    </>)
+        <button type="button" className={`h-10 px-6 w-36 font-semibold rounded-md bg-black text-white`} onClick={()=>showRegisterForm()}>Crear Cuenta</button>
+    </div>)
 }
 
 export { LoginForm }

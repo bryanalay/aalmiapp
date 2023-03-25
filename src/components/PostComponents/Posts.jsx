@@ -3,8 +3,8 @@ import { NewPostForm } from "./NewPostForm";
 
 function Posts({data,setData,deletePost}) {
   return (
-    <div>
-      <div>
+    <div className={`bg-sky-300 py-3`}>
+      <div className={`px-4 my-3`}>
         <NewPostForm data={data} setData={setData} />
       </div>
       {data?.map((po) => (

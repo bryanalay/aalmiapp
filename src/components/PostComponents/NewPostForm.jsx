@@ -27,10 +27,10 @@ function NewPostForm({data,setData}){
         
     }
 
-    return(<>
-        <input onChange={handleInput} placeholder="Post content"></input>
-        <button onClick={setPost} >Create post</button>
-    </>)
+    return(<div className={`bg-emerald-400 p-3`}>
+        <input className={`rounded-md mr-5`} onChange={handleInput} placeholder="Post content"></input>
+        <button className={`class="h-10 px-6 py-3 font-semibold rounded-md bg-black text-white type="submit"`} onClick={setPost} >Create post</button>
+    </div>)
 }
 
 export { NewPostForm }

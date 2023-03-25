@@ -1,11 +1,10 @@
 import { LoginForm } from "../components/LoginComponents/LoginForm"
 
 function Login({login,showRegisterForm}){
-    return(<>
-        <h1>Login page</h1>
-        <LoginForm login={login}/>
-        <button onClick={()=>showRegisterForm()}>SignUp</button>
-    </>)
+    return(<div className={`bg-green-200 h-screen grid justify-center items-center`}>
+        <LoginForm login={login} showRegisterForm={showRegisterForm}/>
+        
+    </div>)
 }
 
 export { Login }

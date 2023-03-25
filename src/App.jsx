@@ -18,7 +18,7 @@ function App() {
   }, [login]);
 
   return (
-    <div className="App">
+    <div className={`bg-cyan-400`}>
       {register ? (token ? <Pages deleteToken={deleteToken} deletePost={deletePost}/>: <Login login={login} showRegisterForm={showRegisterForm} /> ) : <Register registerUser={registerUser} showRegisterForm={showRegisterForm}/> }
     </div>
   );
