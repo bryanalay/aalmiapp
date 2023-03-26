@@ -33,20 +33,12 @@ function useData() {
   }
 
   function showRegisterForm() {
-    switch (register) {
-      case true:
-        setRegister(false);
-        break;
-      case false:
-        setRegister(true);
-        break;
-      default:
-        break;
-    }
+    register? setRegister(false):setRegister(true)
   }
 
   function hayToken() {
     const tk = traerToken();
+
     if (tk) {
       return setToken(true);
     } else {

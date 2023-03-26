@@ -4,8 +4,7 @@ import { useFetch } from "../hooks/useFetch";
 function PostsPage({deletePost}){
     const { data, setData, loading } = useFetch("https://almiapitest.herokuapp.com/api/v1/posts");
 
-   return(<div className={`bg-green-300 px-3 py-3`}>
-        <h1>Posts page</h1>
+   return(<div className={`bg-green-800 w-full`}>
         {loading ? <h1>Loading...</h1> :<Posts data={data} setData={setData} deletePost={deletePost}/>}
     </div>)
 }

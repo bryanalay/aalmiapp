@@ -1,18 +1,15 @@
 import { PostsPage } from "./PostsPage";
+import { LeftSlide } from "../components/HomeComponents/LeftSlide";
+import { RightSlide } from "../components/HomeComponents/RightSlide";
 
 function Home({ deleteToken,deletePost }) {
   return (
-    <div className={`bg-yellow-200 py-4 px-4`}>
-      <button className={`class="h-10 px-6 py-3 m-3 font-semibold rounded-md bg-black text-white type="submit"`}
-        onClick={() => {
-          deleteToken();
-        }}
-      >
-        Cerrar Sesion
-      </button>
+    <div className={`bg-yellow-200 h-screen grid grid-flow-col`}>
+      <LeftSlide deleteToken={deleteToken} />      
       <PostsPage deletePost={deletePost}/>
+      <RightSlide />
     </div>
-  );
+  );  
 }
 
 export { Home };

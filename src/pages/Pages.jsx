@@ -1,7 +1,7 @@
 import { Home } from "./HomePage"
 
 function Pages({deleteToken, deletePost}){
-    return <div className={`bg-cyan-200 p-4`}>
+    return <div className={`p-4 h-screen`}>
         <Home deleteToken={deleteToken} deletePost={deletePost} />
     </div>
 }

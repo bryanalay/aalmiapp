@@ -28,8 +28,8 @@ function NewPostForm({data,setData}){
     }
 
     return(<div className={`bg-emerald-400 p-3`}>
-        <input className={`rounded-md mr-5`} onChange={handleInput} placeholder="Post content"></input>
-        <button className={`class="h-10 px-6 py-3 font-semibold rounded-md bg-black text-white type="submit"`} onClick={setPost} >Create post</button>
+        <input className={`rounded-md mr-5 max-w-sm min-w-min`} onChange={handleInput} placeholder="Post content"></input>
+        <button className={`inline-block text-center h-10 px-4 py-2 font-semibold rounded-md bg-black hover:bg-slate-700 text-white`} onClick={setPost} >Create post</button>
     </div>)
 }
 
