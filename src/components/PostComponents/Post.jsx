@@ -13,13 +13,13 @@ function Post({ id, username, cuerpo, fecha, user_id, deletePost, data, setData 
 
 
   return (
-    <div className={`bg-violet-300 rounded-md py-2 my-4 mx-2`} id={id}>
+    <div className={`bg-violet-100 rounded-md py-2 my-4 mx-2`} id={id}>
       {console.log(id)}
       <h1>{username}</h1>
       <p>{cuerpo}</p>
       
       {user_id == lost.user ? (
-        <button className={`class="h-10 px-6 py-3 font-semibold rounded-md bg-slate-400 text-white type="submit"`} onClick={() => deleteEx()}>Delete post</button>
+        <button className={`inline-block text-center h-10 px-4 py-2 font-semibold rounded-md bg-slate-400 text-white`} onClick={() => deleteEx()}>Delete post</button>
       ) : (
         ""
       )}

@@ -1,7 +1,9 @@
-function RightSlide(){
-    return(<div className="bg-red-300" >
-        <h1>righ slide</h1>
-    </div>)
+function RightSlide() {
+  return (
+    <div className="h-full w-350px">
+      <h1>righ slide</h1>
+    </div>
+  );
 }
 
-export { RightSlide }
+export { RightSlide };
