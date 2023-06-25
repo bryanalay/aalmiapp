@@ -28,13 +28,13 @@ function LoginForm({ login, showRegisterForm }) {
         ></input>
         <input
           type={`password`}
-          className={`rounded-none w-52 h-9 px-4 border-black border-2`}
+          className={`m-3 rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangePassword}
           placeholder="Password"
         ></input>
         <button
           type="submit"
-          className={`inline-block text-center h-10 px-4 py-2 font-semibold w-52 rounded-md bg-black text-white hover:bg-slate-800`}
+          className={`mb-3 inline-block text-center h-10 px-4 py-2 font-semibold w-52 rounded-md bg-black text-white hover:bg-slate-800`}
         >
           Entrar
         </button>

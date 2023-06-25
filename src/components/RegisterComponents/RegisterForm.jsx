@@ -31,13 +31,13 @@ function RegisterForm({ registerUser, showRegisterForm }) {
           placeholder="User"
         ></input>
         <input
-          className={`rounded-none w-52 h-9 px-4 border-black border-2`}
+          className={`m-3 rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangePassword}
           placeholder="Password"
         ></input>
         <button
           type="submit"
-          className={`inline-block text-center h-10 px-4 py-2 font-semibold rounded-md w-52 bg-black text-white hover:bg-slate-800`}
+          className={`mb-2 inline-block text-center h-10 px-4 py-2 font-semibold rounded-md w-52 bg-black text-white hover:bg-slate-800`}
         >
           Create
         </button>
