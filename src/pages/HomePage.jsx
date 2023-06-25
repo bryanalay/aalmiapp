@@ -4,9 +4,9 @@ import { RightSlide } from "../components/HomeComponents/RightSlide";
 
 function Home({ deleteToken,deletePost }) {
   return (
-    <div className={`h-full grid grid-cols-12 `}>
+    <div className={`h-max grid grid-cols-12 `}>
       <LeftSlide deleteToken={deleteToken} />      
-      <PostsPage deletePost={deletePost}/>
+      <PostsPage deleteToken={deleteToken} deletePost={deletePost}/>
       <RightSlide />
     </div>
   );  

@@ -16,7 +16,7 @@ function App() {
   
 // className="h-screen w-screen py-4 px-4 bg-slate-400"
   return (
-    <div className="sm:bg-amber-400 bg-blue-300">
+    <div className="h-max sm:bg-amber-400 bg-blue-300">
       {register ? (token ? <Pages deleteToken={deleteToken} deletePost={deletePost}/>: <LoginPage login={login} showRegisterForm={showRegisterForm} /> ) : <Register registerUser={registerUser} showRegisterForm={showRegisterForm}/> }
     </div>
   );
