@@ -8,6 +8,7 @@ async function postLogin(body){
         setLocalStorage(res.data.token,res.data.userid,body.username)
     })
     .catch((err)=>{
+        console.log(err);
         return err
     })
 }

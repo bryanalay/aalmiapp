@@ -7,7 +7,7 @@ import { elimPost } from "../utils/posts";
 function useData() {
   const [getPage, setPage] = useState();
   const [token, setToken] = useState(false);
-  const [register, setRegister] = useState(true);
+  const [registered, setRegistered] = useState(true);
   //loginData tiene el objeto con token y el id del usuario
   async function login(user) {    
     await postLogin(user);
@@ -20,7 +20,7 @@ function useData() {
 
   async function registerUser(user){
     await postRegister(user)
-    setRegister(true)
+    setRegistered(true)
   }
 
   function traerToken() {
@@ -33,7 +33,7 @@ function useData() {
   }
 
   function showRegisterForm() {
-    register? setRegister(false):setRegister(true)
+    registered? setRegistered(false):setRegistered(true)
   }
 
   function hayToken() {
@@ -53,10 +53,10 @@ function useData() {
     setPage,
     hayToken,
     token,
-    register,
+    registered,
     showRegisterForm,
     registerUser,
-    setRegister,
+    setRegistered,
     deletePost
   };
 }
