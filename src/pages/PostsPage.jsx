@@ -9,14 +9,14 @@ function PostsPage({ deletePost, deleteToken }) {
 
   return (
     <div className={`col-span-12 sm:col-span-6`}>
-      <div className="w-full inline-block sm:hidden bg-blue-400">
+      <div className="w-full  sm:hidden bg-green-400">
         <button
           onClick={() => {
             deleteToken();
           }}
           className="float-left bg-red-500 rounded-sm p-2 m-2"
         >
-          asdasd
+          Salir
         </button>
       </div>
       {loading ? (

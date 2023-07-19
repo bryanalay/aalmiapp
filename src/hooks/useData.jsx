@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getLocalstorage, deleteLocalstorage } from "../data/localStorage";
 import { postLogin } from "../utils/login";
-import { postRegister } from "../utils/register";
+import { postRegister } from "../utils/user";
 import { elimPost } from "../utils/posts";
 
 function useData() {

@@ -8,6 +8,7 @@ export function useFetch(url) {
   const [loading, setLoading] = useState(true);
   const [tk, setTk] = useState(null);
   //"https://almiapitest.herokuapp.com/api/v1/posts"
+  //Bearer token
 
   useEffect(() => {
     setTk(getLocalstorage().token);

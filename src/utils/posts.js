@@ -8,7 +8,7 @@ async function getPosts(token) {
       },
     })
     .then((res) => {
-      return res;
+      return res; 
     })
     .catch((err) => {
       return [];
