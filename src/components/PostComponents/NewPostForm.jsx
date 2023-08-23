@@ -7,7 +7,6 @@ function NewPostForm({data,setData}){
 
     function handleInput(evt){
         setImp(evt.target.value)
-        console.log(evt.target.value);
     }
 
     async function setPost(){
@@ -17,10 +16,10 @@ function NewPostForm({data,setData}){
             data: imp
         }
         await savePost(localstorage.token,body).then((res)=>{
-            console.log('este es el res del setpost', res);
+            //console.log('este es el res del setpost', res);
             const fecha = Date()
-            const newBody={id:res.postid,user_id:body.userid,body:body.data,fecha:fecha,username:res.username}
-            const newArr = [...data,newBody]
+            const newBody={id:res.postid,user_id:body.userid,body:body.data,fecha:fecha,username:localstorage.username}
+            const newArr = [newBody,...data]
             console.log('este es el new arr',newArr);
             setData(newArr)
         })
