@@ -8,7 +8,7 @@ function PostsPage({ deletePost, deleteToken }) {
   );
 
   return (
-    <div className={`col-span-12 sm:col-span-6`}>
+    <div className={`col-span-12 sm:col-span-6 border-[1px] border-black`}>
       <div className="w-full  sm:hidden bg-green-400">
         <button
           onClick={() => {

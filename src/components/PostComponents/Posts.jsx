@@ -3,7 +3,8 @@ import { NewPostForm } from "./NewPostForm";
 
 function Posts({data,setData,deletePost}) {
   return (
-    <div className={` sm:border-l-2 border-l-0 sm:border-r-2 border-r-0 border-gray-300 h-max w-full`}>
+    <div className={`h-max w-full`}>
+        <h1 className="pt-6 font-bold text-2xl">Post Something!!:D</h1>
         <NewPostForm data={data} setData={setData} />
       {data?.map((po) => (
         <Post
