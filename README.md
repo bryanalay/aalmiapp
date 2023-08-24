@@ -1,2 +1,2 @@
 # aalmiapp
-link page: https://bryanalay.github.io/aalmiapp/
+link page: [Click here!! ](https://bryanalay.github.io/aalmiapp/){:target="_blank"}
