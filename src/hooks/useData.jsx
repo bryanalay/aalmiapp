@@ -14,10 +14,12 @@ function useData() {
     hayToken()
   }
 
+  //data post
   async function deletePost(tk,body){
     await elimPost(tk,body)
   }
 
+  //data register postnewuser
   async function registerUser(user){
     await postRegister(user)
     setRegistered(true)

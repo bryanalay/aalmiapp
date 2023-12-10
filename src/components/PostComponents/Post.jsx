@@ -48,7 +48,7 @@ function Post({
   return (
     <div className={`bg-violet-100 rounded-md py-2 my-6 mx-6 text-left border-[1px] border-black`} key={id}>
       <h1 className="pl-4 text-sm pb-1">{username}</h1>
-      <p className="pl-4 pt-2 h-14 border-t-[1px] border-black">{cuerpo}</p>
+      <p className="pl-4 pt-2 h-14 border-t-[1px] border-black break-words">{cuerpo}</p>
       <div className="pl-4 flex gap-3">
       <LikeButton handleLike={handleLike} liked={liked} />
       {user_id == lost.user ? (

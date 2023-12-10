@@ -3,7 +3,7 @@ import { LeftSlide } from "../components/HomeComponents/LeftSlide";
 import { RightSlide } from "../components/HomeComponents/RightSlide";
 import Modal from "../components/Modals/Modal";
 
-function Home({ deleteToken,deletePost }) {
+function HomePage({ deleteToken,deletePost }) {
   return (
     <div className={`h-max grid grid-cols-12 `}>
       <Modal/>
@@ -14,4 +14,4 @@ function Home({ deleteToken,deletePost }) {
   );  
 }
 
-export { Home };
+export { HomePage };

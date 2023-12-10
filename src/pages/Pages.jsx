@@ -1,8 +1,8 @@
-import { Home } from "./HomePage"
+import { HomePage } from "./HomePage"
 
 function Pages({deleteToken, deletePost}){
     return <div className={`h-max`}>
-        <Home deleteToken={deleteToken} deletePost={deletePost} />
+        <HomePage deleteToken={deleteToken} deletePost={deletePost} />
     </div>
 }
 
