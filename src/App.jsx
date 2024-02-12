@@ -30,7 +30,7 @@ function App() {
   // }, [login])
 
   return (
-    <div className="min-h-screen sm:bg-amber-400 bg-blue-300">
+    <div className="w-screen h-screen sm:w-full sm:h-full sm:bg-amber-400 bg-blue-300">
       {registered ? (
         tokenExist ? (
           <Pages/>

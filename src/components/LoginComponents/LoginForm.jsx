@@ -21,7 +21,7 @@ function LoginForm() {
 
   return (
     <div
-      className={`rounded-xl bg-orange-300 flex flex-col justify-center items-center p-8 w-96 gap-4`}
+      className={`sm:rounded-xl bg-orange-300 flex flex-col justify-center items-center p-8 sm:w-96 gap-4 h-80`}
     >
       <h1 className="text-white font-bold text-[35px]">Login</h1>
       <form onSubmit={handleSubmit}>

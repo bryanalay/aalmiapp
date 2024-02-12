@@ -26,7 +26,7 @@ function NewPostForm({data,setData}){
     }
 
     return(<div className={`grid h-max w-full p-6  items-center gap-y-6 border-b-[1px] border-black`}>
-        <input className={`rounded-md h-20 w-full border-[1px] border-black placeholder-transparent whitespace-pre-wrap`} onChange={handleInput} placeholder="Post content" value={imp}></input>
+        <textarea className={`resize-none rounded-md h-20 w-full border-[1px] border-black placeholder-transparent whitespace-pre-wrap`} onChange={handleInput} placeholder="Post content" value={imp}></textarea>
         <button className={`text-center w-28 h-10 p-1 font-semibold rounded-md bg-black hover:bg-slate-700 text-white`} onClick={setPost} >Create post</button>
     </div>)
 }
