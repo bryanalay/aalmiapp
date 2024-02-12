@@ -1,13 +1,17 @@
-function LoginForm({ login, showRegisterForm }) {
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
+
+function LoginForm() {
+
+  const { login, showRegisterForm } = useContext(UserContext)
+
   const user = { username: "", password: "" };
   function handleChangeUsername(evt) {
     user.username = evt.target.value;
-    console.log(user);
   }
 
   function handleChangePassword(evt) {
     user.password = evt.target.value;
-    console.log(user);
   }
 
   function handleSubmit(event){

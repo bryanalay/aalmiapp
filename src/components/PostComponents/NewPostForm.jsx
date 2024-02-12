@@ -16,18 +16,17 @@ function NewPostForm({data,setData}){
             data: imp
         }
         await savePost(localstorage.token,body).then((res)=>{
-            //console.log('este es el res del setpost', res);
             const fecha = Date()
             const newBody={id:res.postid,user_id:body.userid,body:body.data,fecha:fecha,username:localstorage.username}
             const newArr = [newBody,...data]
-            console.log('este es el new arr',newArr);
             setData(newArr)
+            setImp('')
         })
         
     }
 
     return(<div className={`grid h-max w-full p-6  items-center gap-y-6 border-b-[1px] border-black`}>
-        <input className={`rounded-md h-20 w-full border-[1px] border-black placeholder-transparent whitespace-pre-wrap`} onChange={handleInput} placeholder="Post content"></input>
+        <input className={`rounded-md h-20 w-full border-[1px] border-black placeholder-transparent whitespace-pre-wrap`} onChange={handleInput} placeholder="Post content" value={imp}></input>
         <button className={`text-center w-28 h-10 p-1 font-semibold rounded-md bg-black hover:bg-slate-700 text-white`} onClick={setPost} >Create post</button>
     </div>)
 }

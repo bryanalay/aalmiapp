@@ -3,46 +3,45 @@ import { LoginPage } from './pages/LoginPage'
 import { useContext, useEffect } from 'react'
 import { useData } from './hooks/useData'
 import { Pages } from './pages/Pages'
-import { Register } from './pages/RegisterPage'
+import { RegisterPage } from './pages/RegisterPage'
 import { UserContext } from './context/UserContext'
 
 function App() {
 
-  const {coso,user}=useContext(UserContext)
+  const {coso,user, hayToken, tokenExist, getUser, registered, setRegistered, showRegisterForm, login, setUserInfo }=useContext(UserContext)
 
   const {
-    login,
-    deleteToken,
-    hayToken,
-    token,
-    registered,
-    setRegistered,
-    showRegisterForm,
-    registerUser,
-    deletePost
+    registerUser
   } = useData()
-  useEffect(() => {
+
+  useEffect(()=>{
     hayToken()
-    if (token == true) {
+    if(tokenExist == true){
+      
       setRegistered(true)
     }
-  }, [login])
+  },[login])
+  //setRegistered(true)
+  // useEffect(() => {
+  //   hayToken()
+  //   if (tokenExist == true) {
+  //     setRegistered(true)
+  //   }
+  // }, [login])
 
   return (
     <div className="min-h-screen sm:bg-amber-400 bg-blue-300">
       {registered ? (
-        token ? (
-          <Pages deleteToken={deleteToken} deletePost={deletePost} />
+        tokenExist ? (
+          <Pages/>
         ) : (
-          <LoginPage login={login} showRegisterForm={showRegisterForm} />
+          <LoginPage/>
         )
       ) : (
-        <Register
+        <RegisterPage
           registerUser={registerUser}
-          showRegisterForm={showRegisterForm}
         />
       )}
-      {console.log(user)}
     </div>
   )
 }

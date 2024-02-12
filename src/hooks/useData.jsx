@@ -3,15 +3,17 @@ import { getLocalstorage, deleteLocalstorage } from "../data/localStorage";
 import { postLogin } from "../utils/login";
 import { postRegister } from "../utils/user";
 import { elimPost } from "../utils/posts";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
 
 function useData() {
-  const [getPage, setPage] = useState();
   const [token, setToken] = useState(false);
   const [registered, setRegistered] = useState(true);
+  const { hayToken, userInfo } = useContext(UserContext)
   //loginData tiene el objeto con token y el id del usuario
-  async function login(user) {    
+  async function login(user,) {    
     await postLogin(user);
-    hayToken()
   }
 
   //data post
@@ -26,7 +28,7 @@ function useData() {
   }
 
   function traerToken() {
-    return getLocalstorage().token;
+    return userInfo.token;
   }
 
   function deleteToken() {
@@ -38,22 +40,19 @@ function useData() {
     registered? setRegistered(false):setRegistered(true)
   }
 
-  function hayToken() {
-    const tk = traerToken();
+  // function hayToken() {
+  //   const tk = traerToken();
 
-    if (tk) {
-      return setToken(true);
-    } else {
-      return setToken(false);
-    }
-  }
+  //   if (tk) {
+  //     return setToken(true);
+  //   } else {
+  //     return setToken(false);
+  //   }
+  // }
 
   return {
     login,
     deleteToken,
-    getPage,
-    setPage,
-    hayToken,
     token,
     registered,
     showRegisterForm,

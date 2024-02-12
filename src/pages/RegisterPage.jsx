@@ -1,10 +1,10 @@
 import { RegisterForm } from "../components/RegisterComponents/RegisterForm"
 
-function Register({registerUser,showRegisterForm}){
+function RegisterPage({registerUser}){
     return(<div className={`bg-green-200 h-screen grid justify-center items-center`} >
-        <RegisterForm registerUser={registerUser} showRegisterForm={showRegisterForm}/>
+        <RegisterForm registerUser={registerUser}/>
         
     </div>)
 }
 
-export { Register }
+export { RegisterPage }

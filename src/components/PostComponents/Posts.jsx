@@ -1,7 +1,11 @@
 import { Post } from "./Post";
 import { NewPostForm } from "./NewPostForm";
+import { useData } from "../../hooks/useData";
 
-function Posts({data,setData,deletePost}) {
+function Posts({data,setData}) {
+
+  const {deletePost} = useData()
+
   return (
     <div className={`min-h-screen w-full`}>
         <h1 className="pt-6 font-bold text-2xl">Post Something!!:D</h1>
@@ -14,7 +18,6 @@ function Posts({data,setData,deletePost}) {
           cuerpo={po.body}
           fecha={po.fecha}
           user_id={po.user_id}
-          deletePost={deletePost}
           data={data} setData={setData}
           likes={po.likes}
         />

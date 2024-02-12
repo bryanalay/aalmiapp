@@ -2,6 +2,7 @@ import { getLocalstorage } from "../../data/localStorage";
 import { LikeButton } from "../LikeComponents/LikeButton";
 import { useEffect, useState } from "react";
 import likesFetch from "../../utils/likesFetch.js";
+import { useData } from "../../hooks/useData.jsx";
 
 function Post({
   id,
@@ -9,7 +10,6 @@ function Post({
   cuerpo,
   fecha,
   user_id,
-  deletePost,
   data,
   setData,
   likes,
@@ -18,6 +18,7 @@ function Post({
   const tk = lost.token;
   const [liked, setLiked] = useState(false);
   const { addLike,dropLike } = likesFetch
+  const { deletePost } = useData()
 
   function deleteEx() {
     const newArr = data.filter((obj) => obj.id !== id);

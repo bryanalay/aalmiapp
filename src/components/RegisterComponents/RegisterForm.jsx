@@ -1,22 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../context/UserContext";
 
-function RegisterForm({ registerUser, showRegisterForm }) {
-  //const [dataRegister,setDataRegister] = useState({username:'',password:''})
-
+function RegisterForm({ registerUser }) {
+  const {showRegisterForm} = useContext(UserContext)
   const user = { username: "", password: "" };
   function handleChangeUsername(evt) {
     user.username = evt.target.value;
-    console.log(user);
   }
 
   function handleChangePassword(evt) {
     user.password = evt.target.value;
-    console.log(user);
   }
 
   function handleSubmit(evt) {
     evt.preventDefault();
     registerUser(user);
+    showRegisterForm(false)
   }
 
   return (
@@ -41,6 +40,7 @@ function RegisterForm({ registerUser, showRegisterForm }) {
         >
           Create
         </button>
+      </form>
         <button
           className="font-semibold hover:text-gray-600"
           onClick={() => {
@@ -49,7 +49,6 @@ function RegisterForm({ registerUser, showRegisterForm }) {
         >
           Ya tengo cuenta
         </button>
-      </form>
     </div>
   );
 }
