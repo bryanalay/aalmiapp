@@ -32,7 +32,7 @@ const UserProvider = ({children}) =>{
   }
 
   const userprueba = {
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiJ2Zlp2IiwidXNlcm5hbWUiOiJwYXBheWEiLCJwYXNzd29yZCI6IiQyYiQwNSRIdmc5Z0ZPV2JHempXMmJkWDVEcVp1U1pScXZBcGUvNzh3ZVYxRzRmZmRJR2k2Yi9EcFBzaSIsImlhdCI6MTcwNDU5NzY0Nn0.9FheSVJ9kYkNn0dk_9fyabmqzbWHT3M5cX74UeBS0nE',
+    token: 'TOKENHERE-XD',
     userid: 'vfZv',
     username: 'papaya'
   }
