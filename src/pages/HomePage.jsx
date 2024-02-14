@@ -6,7 +6,7 @@ import Modal from "../components/Modals/Modal";
 function HomePage() {
   return (
     <div className={`h-max grid grid-cols-12 `}>
-      <Modal/>
+      {/* <Modal/> */}
       <LeftSlide/>      
       <PostsPage/>
       <RightSlide />

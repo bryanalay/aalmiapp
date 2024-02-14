@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../context/UserContext";
+import { Link, useNavigate } from "react-router-dom";
+import { useData } from "../../hooks/useData";
 
-function RegisterForm({ registerUser }) {
-  const {showRegisterForm} = useContext(UserContext)
+function RegisterForm() {
+  const { registerUser } =useData()
+  const nav = useNavigate()
   const user = { username: "", password: "" };
   function handleChangeUsername(evt) {
     user.username = evt.target.value;
@@ -14,8 +15,8 @@ function RegisterForm({ registerUser }) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    registerUser(user);
-    showRegisterForm(false)
+    registerUser(user)
+    nav('/login')
   }
 
   return (
@@ -28,11 +29,15 @@ function RegisterForm({ registerUser }) {
           className={`rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangeUsername}
           placeholder="User"
+          required
+          minLength={5}
         ></input>
         <input
           className={`m-3 rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangePassword}
           placeholder="Password"
+          required
+          minLength={8}
         ></input>
         <button
           type="submit"
@@ -43,11 +48,8 @@ function RegisterForm({ registerUser }) {
       </form>
         <button
           className="font-semibold hover:text-gray-600"
-          onClick={() => {
-            showRegisterForm();
-          }}
         >
-          Ya tengo cuenta
+          <Link to='/login'>Ya tengo cuenta</Link>
         </button>
     </div>
   );

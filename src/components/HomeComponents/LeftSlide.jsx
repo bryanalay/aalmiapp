@@ -7,15 +7,26 @@ function LeftSlide() {
   const { deleteUser } = useContext(UserContext)
 
   return (
-    <div className=" h-max hidden sm:inline sm:col-span-3">
-      <button
-        className={`inline-block text-center h-10 px-4 py-2 m-3 font-semibold rounded-md bg-black text-white hover:bg-red-700 hover:text-black`}
-        onClick={() => {
-          deleteUser();
-        }}
-      >
-        Cerrar Sesion
-      </button>
+    <div className="sticky h-screen hidden sm:inline sm:col-span-3">
+      <div className='grid bg-orange-200 h-full w-full'>
+        <div className='grid place-items-center'>
+          <a href="">
+            <span>Opciones</span>
+          </a>
+          <p>OPCIONES</p>
+          <p>Inicio</p>
+          <p>Perfil</p>
+          <p>Opciones</p>
+          <button
+            className={`inline-block text-center h-10 px-4 py-2 m-3 font-semibold rounded-md bg-black text-white hover:bg-red-700 hover:text-black`}
+            onClick={() => {
+              deleteUser();
+            }}
+          >
+            Cerrar Sesion
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

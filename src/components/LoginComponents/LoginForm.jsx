@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
 
@@ -29,12 +30,14 @@ function LoginForm() {
           className={`rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangeUsername}
           placeholder="User"
+          required
         ></input>
         <input
           type={`password`}
           className={`m-3 rounded-none w-52 h-9 px-4 border-black border-2`}
           onChange={handleChangePassword}
           placeholder="Password"
+          required
         ></input>
         <button
           type="submit"
@@ -45,9 +48,8 @@ function LoginForm() {
         <button
           type="button"
           className={`inline-block text-center h-10 px-4 py-2 w-36 font-semibold rounded-md bg-black text-white hover:bg-gray-800`}
-          onClick={() => showRegisterForm()}
         >
-          Crear Cuenta
+          <Link to='/signup'>Crear cuenta</Link>
         </button>
       </form>
     </div>
