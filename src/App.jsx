@@ -5,11 +5,30 @@ import { useData } from './hooks/useData'
 import { Pages } from './pages/Pages'
 import { RegisterPage } from './pages/RegisterPage'
 import { UserContext } from './context/UserContext'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, createHashRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
 
   const {coso,user, hayToken, tokenExist, getUser, registered, setRegistered, showRegisterForm, login, setUserInfo }=useContext(UserContext)
+
+  const router = createHashRouter([
+    {
+      path: '/',
+      element: tokenExist?<Navigate to='/pages'/>:<Navigate to='/login'/>
+    },
+    {
+      path: '/login',
+      element: tokenExist?<Navigate to='/pages'/>:<LoginPage/>
+    },
+    {
+      path: '/signup',
+      element: tokenExist?<Navigate to='/pages'/>:<RegisterPage/>
+    },
+    {
+      path: '/pages',
+      element: tokenExist?<Pages/>:<Navigate to='/login'/>
+    }
+  ])
 
   // const {
   //   registerUser
@@ -45,14 +64,15 @@ function App() {
     //     />
     //   )}
     // </div>
-    <BrowserRouter>
-      <Routes>
-        <Route index element={tokenExist?<Navigate to='/pages'/>:<LoginPage/>} />
-        <Route path='/login' element={tokenExist?<Navigate to='/pages'/>:<LoginPage/>} />
-        <Route path='/signup' element={tokenExist?<Navigate to='/pages'/>:<RegisterPage/>} />
-        <Route path='/pages' element={tokenExist?<Pages/>:<Navigate to='/login'/>} />
-      </Routes>
-    </BrowserRouter>
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route index element={tokenExist?<Navigate to='/pages'/>:<LoginPage/>} />
+    //     <Route path='/login' element={tokenExist?<Navigate to='/pages'/>:<LoginPage/>} />
+    //     <Route path='/signup' element={tokenExist?<Navigate to='/pages'/>:<RegisterPage/>} />
+    //     <Route path='/pages' element={tokenExist?<Pages/>:<Navigate to='/login'/>} />
+    //   </Routes>
+    // </BrowserRouter>
+    <RouterProvider router={router}/>
   )
 }
 

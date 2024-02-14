@@ -31,6 +31,7 @@ function LoginForm() {
           onChange={handleChangeUsername}
           placeholder="User"
           required
+          name="ipt"
         ></input>
         <input
           type={`password`}
@@ -38,6 +39,7 @@ function LoginForm() {
           onChange={handleChangePassword}
           placeholder="Password"
           required
+          name="oipt"
         ></input>
         <button
           type="submit"

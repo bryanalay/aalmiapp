@@ -31,6 +31,7 @@ function RegisterForm() {
           placeholder="User"
           required
           minLength={5}
+          name="ipt"
         ></input>
         <input
           className={`m-3 rounded-none w-52 h-9 px-4 border-black border-2`}
@@ -38,6 +39,7 @@ function RegisterForm() {
           placeholder="Password"
           required
           minLength={8}
+          name="oipt"
         ></input>
         <button
           type="submit"
