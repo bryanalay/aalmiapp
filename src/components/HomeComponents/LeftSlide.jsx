@@ -1,31 +1,32 @@
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import LeftSlideContent from "./LeftSlideContent";
+import bgline from '../../assets/bgline.png'
 
+function LeftSlide({setIsOpen}) {
 
-function LeftSlide() {
-
-  const { deleteUser } = useContext(UserContext)
-
+  const [open,setOpen] = useState(false)
+  function handleClick(e){
+    if (e.target === e.currentTarget) {
+      setOpen(false);
+    }
+  }
   return (
-    <div className="sticky h-screen hidden sm:inline sm:col-span-3">
-      <div className='grid bg-orange-200 h-full w-full'>
-        <div className='grid place-items-center'>
-          <Link to='./'>Home</Link>
-          <Link to='./profile'>Profile</Link>
-          <Link to='./post'>Post</Link>
-          <p>Opciones</p>
-          <button
-            className={`inline-block text-center h-10 px-4 py-2 m-3 font-semibold rounded-md bg-black text-white hover:bg-red-700 hover:text-black`}
-            onClick={() => {
-              deleteUser();
-            }}
-          >
-            Cerrar Sesion
-          </button>
-        </div>
+    <>
+    {open && 
+    <div className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex z-50`} 
+      onClick={handleClick}
+    >
+      <div name='slide' className="w-2/3">
+        <LeftSlideContent/>
       </div>
+    </div>}
+      <button className="float-left rounded-sm p-2 m-2 h-10 w-10 sm:hidden inline"
+       style={{ backgroundImage: `url(${bgline})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
+      onClick={()=>{setOpen(!open)}}></button>
+    <div className="sticky h-screen hidden sm:inline sm:col-span-3">
+      <LeftSlideContent setIsOpen={setIsOpen} />
     </div>
+    </>
   );
 }
 

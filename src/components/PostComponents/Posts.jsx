@@ -2,14 +2,16 @@ import { Post } from "./Post";
 import { NewPostForm } from "./NewPostForm";
 import { useData } from "../../hooks/useData";
 
-function Posts({data,setData}) {
+function Posts({data,setData,showNewpost}) {
 
   const {deletePost} = useData()
 
   return (
-    <div className={`min-h-screen w-full`}>
-        <h1 className="pt-6 font-bold text-2xl">Post Something!!:D</h1>
-        <NewPostForm data={data} setData={setData} />
+    <div className={`${showNewpost ? 'min-h-screen':'h-full'} w-full`}>
+        { showNewpost && <div>
+          <h1 className="pt-6 font-bold text-2xl">Post Something!!:D</h1>
+          <NewPostForm data={data} setData={setData} />
+        </div>}
       {data?.map((po) => (
         <Post
           key={po.id}
