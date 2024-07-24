@@ -10,6 +10,7 @@ const UserProvider = ({children}) =>{
   const [userInfo,setUserInfo] = useState(null)
   const [registered,setRegistered] = useState(true)
   const coso = 'coso'
+  const [isOpen,setIsOpen] = useState(false)
 
   async function login(user) {    
     await postLogin(user);
@@ -76,11 +77,13 @@ const UserProvider = ({children}) =>{
         setRegistered,
         login,
         setUserInfo,
+        setIsOpen,
+        isOpen,
         loged,
         coso,
         userInfo,
         registered,
-        tokenExist
+        tokenExist,
       }}
     >
       {children}

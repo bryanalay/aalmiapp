@@ -1,1 +1,1 @@
-export const API_BASE_URL = 'https://almiapitest.herokuapp.com/api/v1/'
+export const API_BASE_URL = 'https://almiapi.onrender.com/api/v1/'

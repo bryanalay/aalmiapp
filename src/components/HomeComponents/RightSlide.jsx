@@ -2,7 +2,7 @@ import RightSlideContent from "./RightSlideContent";
 
 function RightSlide() {
   return (
-    <div className="h-screen hidden sm:grid sm:col-span-3 sm:place-items-center px-6">
+    <div className="sm:col-span-3 hidden sm:inline h-screen sm:place-items-center px-6 ">
       <RightSlideContent/>
     </div>
   );

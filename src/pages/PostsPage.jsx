@@ -3,15 +3,16 @@ import Loading from "../components/LoadingComponents/Loading";
 import { Posts } from "../components/PostComponents/Posts";
 import { useFetch } from "../hooks/useFetch";
 import { UserContext } from "../context/UserContext";
+import { API_BASE_URL } from "../../api/config";
 
 function PostsPage() {
   const { deleteUser } = useContext(UserContext)
   const { data, setData, loading } = useFetch(
-    "https://almiapitest.herokuapp.com/api/v1/posts"
+    API_BASE_URL+"posts"
   );
 
   return (
-    <div className={`col-span-12 sm:col-span-6 sm:border-x-[1px] border-black`}>
+    <div className={`col-span-full sm:col-span-6 sm:border-x-[1px] border-black`}>
       {loading ? (
         <Loading/>
       ) : (

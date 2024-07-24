@@ -6,7 +6,8 @@ import { Pages } from './pages/Pages'
 import { RegisterPage } from './pages/RegisterPage'
 import { UserContext } from './context/UserContext'
 import { BrowserRouter, Routes, Route, Navigate, createHashRouter, RouterProvider } from 'react-router-dom'
-import ProfilePage from './pages/ProfilePage'
+import { ProfilePage } from './pages/ProfilePage'
+
 
 function App() {
 

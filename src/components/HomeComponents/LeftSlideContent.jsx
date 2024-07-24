@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { getLocalstorage } from "../../data/localStorage";
 
-const LeftSlideContent = ({setIsOpen}) => {
-  const { deleteUser } = useContext(UserContext)
+const LeftSlideContent = () => {
+  const { deleteUser, setIsOpen } = useContext(UserContext)
   const { user } = getLocalstorage()
   return (
     <div className='grid bg-orange-200 h-full w-full'>

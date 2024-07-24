@@ -1,46 +1,46 @@
-import { stringify } from "postcss";
+import { API_BASE_URL } from '../../api/config'
 
 const likesFetch = {
   addLike: (token, postid) => {
-    console.log("Add");
-    const body = { postid: postid };
-    console.log(token, body);
-    const URL = "https://almiapitest.herokuapp.com/api/v1/like";
+    console.log('Add')
+    const body = { postid: postid }
+    console.log(token, body)
+    const URL = API_BASE_URL + 'like'
     const options = {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(body)
-    };
+    }
 
-    fetch(URL,options)
+    fetch(URL, options)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
-        return res;
-      });
+        console.log(res)
+        return res
+      })
   },
   dropLike: (token, postid) => {
-    console.log("deleted");
-    const body = { postid: postid };
-    console.log(token, body);
-    const URL = "https://almiapitest.herokuapp.com/api/v1/like";
+    console.log('deleted')
+    const body = { postid: postid }
+    console.log(token, body)
+    const URL = API_BASE_URL + 'like'
     const options = {
-      method: "DELETE",
+      method: 'DELETE',
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`
       },
       body: JSON.stringify(body)
-    };
-    fetch(URL,options)
+    }
+    fetch(URL, options)
       .then((res) => res.json())
       .then((res) => {
-        return res;
-      });
-  },
-};
+        return res
+      })
+  }
+}
 
-export default likesFetch;
+export default likesFetch

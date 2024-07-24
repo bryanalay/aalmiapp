@@ -9,7 +9,7 @@ function Posts({data,setData,showNewpost}) {
   return (
     <div className={`${showNewpost ? 'min-h-screen':'h-full'} w-full`}>
         { showNewpost && <div>
-          <h1 className="pt-6 font-bold text-2xl">Post Something!!:D</h1>
+          <h1 className="pt-6 font-bold text-2xl">Post Something</h1>
           <NewPostForm data={data} setData={setData} />
         </div>}
       {data?.map((po) => (

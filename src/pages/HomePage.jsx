@@ -1,31 +1,35 @@
 import { PostsPage } from "./PostsPage";
-import { LeftSlide } from "../components/HomeComponents/LeftSlide";
 import { RightSlide } from "../components/HomeComponents/RightSlide";
 import Modal from "../components/Modals/Modal";
 import { Route, Routes } from "react-router-dom";
-import ProfilePage from "./ProfilePage";
+import { ProfilePage } from "./ProfilePage";
 import { PostPage } from "./PostPage";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/UserContext";
 
 function HomePage() {
-  const [isOpen, setIsOpen] = useState(false)
+  const { isOpen,setIsOpen } = useContext(UserContext)
+
   return (
-    <div className={`h-max grid grid-cols-12 `}>
-      {isOpen && <Modal setIsOpen={setIsOpen}>
-          <div>titulo</div>
-          <p>cosas que pasan</p>
-          <p>cosas que pasan</p>
-          <p>cosas que pasan</p>
-        </Modal>}
-      <LeftSlide setIsOpen={setIsOpen}/>      
-      {/* <PostsPage/> */}
-      <Routes>
-        <Route path="/" element={<PostsPage/>}/>
-        <Route path="/profile/:id" element={<ProfilePage/>}/>
-        <Route path="/post" element={<PostPage/>}/>
-      </Routes>
-      <RightSlide />
-    </div>
+    <main className={`col-span-full sm:col-span-9 sm:col-start-4 overflow-auto`}>
+      <div className="grid grid-cols-9 h-max">
+        <div className="col-span-full sm:col-span-6">
+          {isOpen && 
+            <Modal setIsOpen={setIsOpen}>
+                <div>titulo</div>
+                <p>cosas que pasan</p>
+                <p>cosas que pasan</p>
+                <p>cosas que pasan</p>
+            </Modal>}
+            <Routes>
+              <Route path="/" element={<PostsPage/>}/>
+              <Route path="/profile/:id" element={<ProfilePage/>}/>
+              <Route path="/post" element={<PostPage/>}/>
+            </Routes>
+        </div>
+        <RightSlide />
+      </div>
+    </main>
   );  
 }
 
