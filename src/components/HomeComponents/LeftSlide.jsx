@@ -17,14 +17,14 @@ function LeftSlide() {
         onClick={handleClick}
       >
         <div name='slide' className="w-2/3">
-          <LeftSlideContent />
+          <LeftSlideContent setOpen={setOpen}/>
         </div>
       </div>}
       <button className="float-left rounded-sm p-2 m-2 h-10 w-10 sm:hidden inline"
       style={{ backgroundImage: `url(${bgline})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}
       onClick={()=>{setOpen(!open)}}></button>
       <div className="sticky h-screen hidden sm:inline sm:col-span-3">
-        <LeftSlideContent />
+        <LeftSlideContent/>
       </div>
     </header>
   );
