@@ -33,7 +33,7 @@ function ProfilePage() {
     <div className={`col-span-12 sm:col-span-6 sm:border-x-[1px] border-black flex flex-col w-full p-5 gap-y-10`}>
       <section className="w-full h-[200px] bg-slate-400">
         <div className="bg-green-300 min-h-[150px] flex justify-between items-end px-5 py-3">
-          {userinfo.data && <img src={userinfo?.data[0]?.fprofile} alt="fprofile" />}
+          {userinfo.data && <img src={userinfo?.data[0]?.fprofile} alt="fprofile" className="" />}
           <div>{username}</div>
         </div>
         <div>
