@@ -1,10 +1,12 @@
 import { Post } from "./Post";
 import { NewPostForm } from "./NewPostForm";
 import { useData } from "../../hooks/useData";
+import { getLocalstorage } from "../../data/localStorage";
 
 function Posts({data,setData,showNewpost}) {
 
   const {deletePost} = useData()
+  const { username } = getLocalstorage()
 
   return (
     <div className={`${showNewpost ? 'min-h-screen':'h-full'} w-full`}>
@@ -16,7 +18,7 @@ function Posts({data,setData,showNewpost}) {
         <Post
           key={po.id}
           id={po.id}
-          username={po.username}
+          username={po.username || username}
           cuerpo={po.body}
           fecha={po.fecha}
           user_id={po.user_id}

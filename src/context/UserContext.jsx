@@ -11,10 +11,13 @@ const UserProvider = ({children}) =>{
   const [registered,setRegistered] = useState(true)
   const coso = 'coso'
   const [isOpen,setIsOpen] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  async function login(user) {    
+  async function login(user) {
+    setLoading(true) 
     await postLogin(user);
     hayToken()
+    setLoading(false)
   }
 
   //trae el localstorage
@@ -78,12 +81,14 @@ const UserProvider = ({children}) =>{
         login,
         setUserInfo,
         setIsOpen,
+        setLoading,
         isOpen,
         loged,
         coso,
         userInfo,
         registered,
         tokenExist,
+        loading
       }}
     >
       {children}

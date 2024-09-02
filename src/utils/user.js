@@ -38,4 +38,25 @@ async function updateRegister(url, info) {
   }
 }
 
-export { postRegister, updateRegister }
+async function deleteUser() {
+  const { token, user } = getLocalstorage()
+  const url = API_BASE_URL + 'user/' + user
+  if (token) {
+    await axios
+      .delete(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: '*/*'
+        }
+      })
+      .then((response) => {
+        console.log('Deleted Message: ' + response.data)
+        localStorage.clear()
+      })
+      .catch((err) => {
+        console.log('Error al eliminar perfil: ' + err)
+      })
+  }
+}
+
+export { postRegister, updateRegister, deleteUser }

@@ -3,6 +3,7 @@ import { LikeButton } from "../LikeComponents/LikeButton";
 import { useEffect, useState } from "react";
 import likesFetch from "../../utils/likesFetch.js";
 import { useData } from "../../hooks/useData.jsx";
+import { Link } from "react-router-dom";
 
 function Post({
   id,
@@ -13,6 +14,7 @@ function Post({
   data,
   setData,
   likes,
+  info
 }) {
   const lost = getLocalstorage();
   const tk = lost.token;
@@ -47,15 +49,24 @@ function Post({
   }, []);
 
   return (
-    <div className={`bg-violet-100 rounded-md py-2 my-6 mx-6 text-left border-[1px] border-black`} key={id}>
-      <h1 className="pl-4 text-sm pb-1">{username}</h1>
-      <p className="pl-4 pt-2 h-14 border-t-[1px] border-black break-words">{cuerpo}</p>
+    <div className={`bg-violet-200 rounded-md py-2 my-6 mx-6 text-left border-[1px] border-black`} key={id} >
+      {!info ?
+        (<Link to={`./post/${id}`} state={{id, username, cuerpo, fecha, user_id, data, likes}}>
+          <h1 className="pl-4 text-sm pb-1">{username}</h1>
+          <p className="pl-4 pt-2 h-14 border-t-[1px] border-black break-words">{cuerpo}</p>
+        </Link>
+        ) : (
+        <div>
+          <h1 className="pl-4 text-sm pb-1">{username}</h1>
+          <p className="pl-4 pt-2 h-14 border-t-[1px] border-black break-words">{cuerpo}</p>
+        </div>
+        )}
       <div className="pl-4 flex gap-3">
       <LikeButton handleLike={handleLike} liked={liked} />
       {user_id == lost.user ? (
         <button
-          className={`inline-block text-center h-6 px-2 font-semibold rounded-md bg-slate-400 text-white hover:bg-red-600`}
-          onClick={() => deleteEx()}
+        className={`inline-block text-center h-6 px-2 font-semibold rounded-md bg-slate-400 text-white hover:bg-red-600`}
+        onClick={() => deleteEx()}
         >
           Delete
         </button>

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import LoadingGlobal from "../LoadingComponents/LoadingGlobal";
 
 function LoginForm() {
 
-  const { login, showRegisterForm } = useContext(UserContext)
+  const { login, showRegisterForm, loading, setLoading } = useContext(UserContext)
 
   const user = { username: "", password: "" };
   function handleChangeUsername(evt) {
@@ -24,6 +25,7 @@ function LoginForm() {
     <div
       className={`sm:rounded-xl bg-orange-300 flex flex-col justify-center items-center p-8 sm:w-96 gap-4 h-80`}
     >
+      <LoadingGlobal loading={loading}/>
       <h1 className="text-white font-bold text-[35px]">Login</h1>
       <form onSubmit={handleSubmit}>
         <input

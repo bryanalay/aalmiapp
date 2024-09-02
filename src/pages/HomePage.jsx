@@ -14,18 +14,11 @@ function HomePage() {
     <main className={`col-span-full sm:col-span-9 sm:col-start-4 overflow-auto`}>
       <div className="grid grid-cols-9 h-max">
         <div className="col-span-full sm:col-span-6">
-          {isOpen && 
-            <Modal setIsOpen={setIsOpen}>
-                <div>titulo</div>
-                <p>cosas que pasan</p>
-                <p>cosas que pasan</p>
-                <p>cosas que pasan</p>
-            </Modal>}
-            <Routes>
-              <Route path="/" element={<PostsPage/>}/>
-              <Route path="/profile/:id" element={<ProfilePage/>}/>
-              <Route path="/post" element={<PostPage/>}/>
-            </Routes>
+          <Routes>
+            <Route path="/" element={<PostsPage/>}/>
+            <Route path="/profile/:id" element={<ProfilePage/>}/>
+            <Route path="/post/:id" element={<PostPage/>}/>
+          </Routes>
         </div>
         <RightSlide />
       </div>

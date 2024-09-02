@@ -11,8 +11,7 @@ const LeftSlideContent = ({setOpen}) => {
         <div className='grid place-items-center'>
           <Link to='./' onClick={()=>setOpen(false)}>Home</Link>
           <Link to={`./profile/${user}`} onClick={()=>setOpen(false)}>Profile</Link>
-          <Link to='./post' onClick={()=>setOpen(false)}>Post</Link>
-          <p>Opciones</p>
+          {/* <Link to='./post' onClick={()=>setOpen(false)}>Post</Link> */}
           <button onClick={()=>{setIsOpen(true)}}>Open Modal</button>
           <button
             className={`inline-block text-center h-10 px-4 py-2 m-3 font-semibold rounded-md bg-black text-white hover:bg-red-700 hover:text-black`}

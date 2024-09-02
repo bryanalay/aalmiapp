@@ -5,13 +5,13 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { v4 } from 'uuid'
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCW59fPoJt7IkAd9pTbvL37iPQ0cKlqWZk',
-  authDomain: 'almi-bb52e.firebaseapp.com',
-  projectId: 'almi-bb52e',
-  storageBucket: 'almi-bb52e.appspot.com',
-  messagingSenderId: '988456719615',
-  appId: '1:988456719615:web:274caf336f59367d7d68ca',
-  measurementId: 'G-Y5PZ4L6HJ3'
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 }
 
 // Initialize Firebase
